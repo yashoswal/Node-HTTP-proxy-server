@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMPE 273 - Project</title>
+    <!--First try for the online version of jQuery-->
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+<!-- If no online access, fallback to our hardcoded version of jQuery -->
+
+    <script>
+window.jQuery || document.write('<script src="/javascripts/jquery-1.8.2.min.js"><\/script>')
+    </script><!-- Custom JS -->
+
+    <script src="/javascripts/script.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <script src= "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- Bootstrap CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="/stylesheets/styles.css" rel="stylesheet">
+    <script src="/javascripts/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+<div class = "cointainer">
+	<nav class="navbar navbar-default" role="navigation">
+ 		 <div class="container-fluid">
+ 			   <div class="navbar-header">
+      <a class="navbar-brand" href="/">  </a>
+    <p style=" text-indent: 16em;"> 
+     <a href="/"> <button type="button" class="btn btn-default navbar-btn"> Reverse-Proxy </button> </a>
+      
+	<a href="/simpleProxy"> <button type="button" class="btn btn-default navbar-btn"> Simple-Proxy </button> </a>
+   
+    <a href="/gzip"> <button type="button" class="btn btn-success">   <strong>GZIP</strong></button> </a>
+        
+    <a href="/changeresponse"> <button type="button" class="btn btn-default navbar-btn"> Change-Response Proxy</button> </a>
+    
+    <a href="/websocketproxy"> <button type="button" class="btn btn-default navbar-btn"> Web-Socket Proxy</button> </a>
+    
+    <a href="/loadBalancer"> <button type="button" class="btn btn-default navbar-btn"> Load Balancer</button> </a>
+
+    <a href="/httpTohttps"> <button type="button" class="btn btn-default navbar-btn"> HTTP-Secure</button> </a>
+    </p>
+    
+    </div>
+  </div>
+ </nav>
+ </div> 
+    <div class="row">
+        <div class="container" id="main">
+            <div class="carousel slide" id="myCarousel">
+                <!-- Indicators -->
+
+                <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#myCarousel"></li>
+
+                    <li class="active" data-slide-to="1" data-target=
+                    "#myCarousel"></li>
+
+                    <li data-slide-to="2" data-target="#myCarousel"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img alt="proxy1" class="img-responsive" src=
+                        "images/one.jpg">
+
+                        <div class="carousel-caption">
+                            <h4>CMPE 273 - PROXY SERVER</h4>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img alt="proxy1" class="img-responsive" src=
+                        "images/two.jpg">
+
+                        <div class="carousel-caption">
+                            <h4>CMPE 273 A- WEB SERVICES PROJECT</h4>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img alt="proxy1" class="img-responsive" src=
+                        "images/three.jpg">
+
+                        <div class="carousel-caption">
+                            <h4>CMPE 273 B- WEB SERVICES PROJECT</h4>
+                        </div>
+                    </div>
+                </div><!-- closing inner carousel --><a class=
+                "carousel-control left" data-slide="prev" href=
+                "#myCarousel"><span class="icon-prev"></span></a> <a class=
+                "carousel-control right" data-slide="next" href=
+                "#myCarousel"><span class="icon-next"></span></a>
+            </div><!-- end myCarousel -->
+            <!-- ***************************************proxy info***************************************************** -->
+            <!-- /PROXY LIST-->
+
+            <div class="container" id="proxylist">
+                <section>
+                   
+
+                    <div class="row">
+                        <!-- PROXY LIST-->
+
+                        <div id="proxyList">
+                            <h2>Gzipped Proxy List</h2>
+
+                            <table border="1" class="table table border">
+                                <thead>
+                                    <tr>
+                                        <th>Configuaration Id</th>
+
+                                        <th>TargetURL</th>
+                                       
+                                        <th>ProxyURL</th>
+                                     
+                                        <th>Delete?</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody></tbody>
+                            </table>
+                        </div><!-- /PROXY LIST-->
+                        <div class="modal-footer" style="text-align:right">
+                            <button class="btn btn-primary" id="btnRefresh"
+                            type="button">REFRESH</button>
+                        </div>
+                    </div>
+                </section>
+            </div><!--row ended -->
+           
+            <!-- **********************proxy details module******************************** -->
+          <div class = cointainer>
+            <div class="col" id="main2">
+            
+                <div class="model-fade">
+                    <div class="model-dialog">
+                        <div class="modal-header">
+                            <h4 class="modal-title"><strong>ADD A URL
+                            TO BE GZIPPED</strong></h4>
+                        </div><!-- ending of model header-->
+
+                        <div id="addProxy">
+                            <fieldset>
+                                <table>
+                                    <tr>
+                                        <td>Target URL:</td>
+
+                                        <td><input id="inputProxyTargetURL"
+                                        placeholder="Target URL" type=
+                                        "text"></td>
+                                    </tr>
+
+                                    <tr>
+                                        
+                                    </tr>
+                                    
+                                     <br>
+                                     </br>
+                                     
+
+                                </table><br>
+                            </fieldset>
+                        
+
+                        <div class="modal-footer" id ="foot1">
+                            <button class="btn btn-primary" id="btnAddProxy"
+                            type="button">SAVE PROXY</button>
+                        </div><!-- end of model footer -->
+                    </div><!-- model dialog ends -->
+                </div><!-- model fade ends -->
+            </div><!-- ending column 2 cointainer -->
+            </div>
+           
+            
+        <!--    **********************************Update  proxy module ***************************************************-->  
+           <div class = "cointainer" id = "cont2">
+               <div class="modal-header">
+                            <h4 class="modal-title"><strong>Update Proxy
+                            PROXY</strong></h4>
+                        </div><!-- ending of model header-->
+                 <div id="proxyInfo">
+                        <div id="updateProxy">
+                            <fieldset>
+                                <table>
+                                    <tr>
+                                        <td><strong>Proxy ID:</strong></td>
+
+                                        <td><span id="proxyID"></span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Proxy URL:</td>
+
+                                        <td><label id="updateProxyURL"></label>
+                                        <!--<input id="updateProxyURL" type="text" placeholder="Proxy URL" class="textBox"> --></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Target URL:</td>
+
+                                        <td><input class="textBox" id=
+                                        "updateProxyTargetURL" placeholder=
+                                        "Target URL" type="text"></td>
+                                    </tr>
+
+                                    <tr>
+                                       
+                                    </tr>
+                                </table>
+                            </fieldset>
+                       
+                            <br>
+                            </br>
+                    <div class="modal-footer">
+                        <button class="btn btn-warning" id="btnUpdateProxy"
+                        type="button">UPDATE PROXY</button> <button class=
+                        "btn btn-primary" id="btnStartProxy" type=
+                        "button">START PROXY</button> <button class=
+                        "btn btn-primary" id="btnStopProxy" type="button">STOP
+                        PROXY</button>
+                 </div>
+              </div>        
+                    </div><!-- end of model footer -->
+                </div><!-- model dialog ends -->
+            </div><!-- model fade -->
+        </div><!-- col4 ends here-->
+    </div><!-- row ends here  --><!-- container ends here -->
+</div>
+</div> <!-- cointainer end-->
+           </div>
+</div><!-- class container ends here -->
+    <!--First try for the online version of jQuery-->
+    <script src="http://code.jquery.com/jquery.js"></script> 
+<!-- If no online access, fallback to our hardcoded version of jQuery -->
+     <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script> <!-- Bootstrap JS -->
+     <script src="/javascripts/bootstrap.min.js"></script> <!-- Custom JS -->
+     <script src="/javascripts/script.js"></script> <script src="/javascripts/bootstrap.js"></script> <script src=
+"http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/javascripts/globalGzip.js"></script>
+</body>

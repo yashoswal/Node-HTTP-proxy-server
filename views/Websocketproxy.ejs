@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMPE 273 - Project</title>
+    <!--First try for the online version of jQuery-->
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+<!-- If no online access, fallback to our hardcoded version of jQuery -->
+    <script>window.jQuery || document.write('<script src="/javascripts/jquery-1.8.2.min.js"><\/script>')
+    </script><!-- Custom JS -->
+    <script src="/javascripts/script.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <script src= "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- Bootstrap CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="/stylesheets/styles.css" rel="stylesheet">
+    <script src="/javascripts/modernizr-2.6.2.min.js"></script>
+    <script src="/javascripts/websocketscript.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+
+    
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+       <a class="navbar-brand" href="/">  </a>
+      <p style=" text-indent: 16em;"> 
+     <a href="/"> <button type="button" class="btn btn-default navbar-btn"> Reverse-Proxy </button> </a>
+      
+	<a href="/simpleProxy"> <button type="button" class="btn btn-default navbar-btn"> Simple-Proxy </button> </a>
+   
+    <a href="/gzip"> <button type="button" class="btn btn-default navbar-btn">   GZIP </button> </a>
+        
+    <a href="/changeresponse"> <button type="button" class="btn btn-default navbar-btn"> Change-Response Proxy</button> </a>
+    
+    <a href="/websocketproxy"> <button type="button" class="btn btn-success"> <strong>Web-Socket Proxy</strong></button> </a>
+    
+    <a href="/loadBalancer"> <button type="button" class="btn btn-default navbar-btn"> Load Balancer</button> </a>
+
+    <a href="/httpTohttps"> <button type="button" class="btn btn-default navbar-btn"> HTTP-Secure</button> </a>
+    </p>
+  </div>
+ </nav>
+  <div class="container" id="main">
+            <div class="carousel slide" id="myCarousel">
+                <!-- Indicators -->
+
+                <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#myCarousel"></li>
+
+                    <li class="active" data-slide-to="1" data-target=
+                    "#myCarousel"></li>
+
+                    <li data-slide-to="2" data-target="#myCarousel"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img alt="proxy1" class="img-responsive" src=
+                        "images/one.jpg">
+
+                        <div class="carousel-caption">
+                            <h4>CMPE 273 - PROXY SERVER</h4>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img alt="proxy1" class="img-responsive" src=
+                        "images/two.jpg">
+
+                        <div class="carousel-caption">
+                            <h4>CMPE 273 A- WEB SERVICES PROJECT</h4>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img alt="proxy1" class="img-responsive" src=
+                        "images/three.jpg">
+
+                        <div class="carousel-caption">
+                            <h4>CMPE 273 B- WEB SERVICES PROJECT</h4>
+                        </div>
+                    </div>
+                </div><!-- closing inner carousel --><a class=
+                "carousel-control left" data-slide="prev" href=
+                "#myCarousel"><span class="icon-prev"></span></a> <a class=
+                "carousel-control right" data-slide="next" href=
+                "#myCarousel"><span class="icon-next"></span></a>
+            </div><!-- end myCarousel -->
+    
+                    <div class="container">
+                        <!-- Load Balancer LIST-->
+                        <section>
+                        <div class = "row">
+                        
+                        <div class="modal-footer">
+                           <button style="margin-top : 10px; margin-left : 14px" class="btn btn-primary" id="btnDemo" type="button">Connect to Websocket</button>
+                        </div><!-- end of model footer -->
+                    </div><!--row ended -->
+                </section>
+            </div>
+            <!-- container ended -->
+
+            <div id="page-wrapper">
+                 <h1>WebSockets Demo</h1>
+  
+                 <div id="status">Connecting...</div>
+  
+                 <ul id="messages"></ul>
+  
+  
+                <textarea id="txtMessage" placeholder="Write your message here..." required></textarea>
+                <span>Message from sever: </span>
+                <textarea id="txtEcho" placeholder="Your message will be echoed here..." required></textarea>
+
+                    
+            </div>
+
+      <!--First try for the online version of jQuery-->
+    <script src="http://code.jquery.com/jquery.js"></script> 
+<!-- If no online access, fallback to our hardcoded version of jQuery -->
+     <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script> <!-- Bootstrap JS -->
+     <script src="/javascripts/bootstrap.min.js"></script> <!-- Custom JS -->
+     <script src="/javascripts/script.js"></script> <script src="/javascripts/bootstrap.js"></script> 
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</body>
+</html>
